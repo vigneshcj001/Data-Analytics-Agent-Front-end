@@ -39,10 +39,15 @@ function ChatBox({ fileName, apiKey }) {
           ...prev,
           { sender: "bot", text: res.data.answer },
         ]);
+
         if (res.data.chart_base64) {
           setMessages((prev) => [
             ...prev,
-            { sender: "bot", chart: res.data.chart_base64 },
+            {
+              sender: "bot",
+              chart: res.data.chart_base64,
+              chart_filename: res.data.chart_filename,
+            },
           ]);
         }
       }
@@ -73,12 +78,20 @@ function ChatBox({ fileName, apiKey }) {
             }`}
           >
             {msg.text}
+
             {msg.chart && (
-              <img
-                src={`data:image/png;base64,${msg.chart}`}
-                alt="chart"
-                className="mt-2 rounded-lg shadow-md"
-              />
+              <div className="mt-2">
+                <img
+                  src={`data:image/png;base64,${msg.chart}`}
+                  alt={msg.chart_filename || "chart"}
+                  className="rounded-lg shadow-md"
+                />
+                {msg.chart_filename && (
+                  <p className="text-sm text-gray-500 mt-1">
+                    {msg.chart_filename}
+                  </p>
+                )}
+              </div>
             )}
           </motion.div>
         ))}

@@ -26,6 +26,7 @@ function FileUpload({ setFileName }) {
       }
     } catch (err) {
       console.error("Upload failed", err);
+      alert("❌ Upload failed. Check your backend!");
     } finally {
       setUploading(false);
     }
