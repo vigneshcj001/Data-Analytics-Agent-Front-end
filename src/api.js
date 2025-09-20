@@ -1,10 +1,6 @@
-import axios from "axios";
-
+// src/api.js
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://data-analytics-agent-back-end.onrender.com";
 
-const api = axios.create({
-  baseURL: API_BASE_URL,
-});
-
-export default api;
+export default API_BASE_URL;

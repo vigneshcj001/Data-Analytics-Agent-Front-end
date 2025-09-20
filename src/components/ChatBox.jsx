@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
+import axios from "axios";
 import { motion } from "framer-motion";
-import api from "../api";
+import API from "../api";
 
 function ChatBox({ fileName, apiKey }) {
   const [messages, setMessages] = useState([]);
@@ -26,7 +27,7 @@ function ChatBox({ fileName, apiKey }) {
     formData.append("api_key", apiKey);
 
     try {
-      const res = await api.post("/chat", formData);
+      const res = await axios.post(`${API}/chat`, formData);
 
       if (res.data.error) {
         setMessages((prev) => [
@@ -38,7 +39,6 @@ function ChatBox({ fileName, apiKey }) {
           ...prev,
           { sender: "bot", text: res.data.answer },
         ]);
-
         if (res.data.chart_base64) {
           setMessages((prev) => [
             ...prev,
