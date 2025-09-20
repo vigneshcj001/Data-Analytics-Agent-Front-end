@@ -1,6 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
 import { motion } from "framer-motion";
+import api from "./api";
 
 function FileUpload({ setFileName }) {
   const [uploading, setUploading] = useState(false);
@@ -15,7 +15,7 @@ function FileUpload({ setFileName }) {
     formData.append("file", file);
 
     try {
-      const res = await axios.post("http://localhost:8000/upload", formData, {
+      const res = await api.post("/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
