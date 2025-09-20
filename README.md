@@ -137,13 +137,6 @@ Data_Analytics_Agent/
 
 ---
 
-## 📸 Screenshots
-
-🔹 Upload dataset and chat with it in natural language.
-🔹 Charts auto-render when relevant.
-
----
-
 ## 🚀 Future Enhancements
 
 * Support for SQL databases.
