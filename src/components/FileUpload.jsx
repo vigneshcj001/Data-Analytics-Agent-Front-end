@@ -34,7 +34,7 @@ function FileUpload({ setFileName }) {
 
   return (
     <motion.div
-      className="border-2 border-dashed rounded-xl p-8 text-center bg-gray-50 hover:bg-gray-100 transition cursor-pointer"
+      className="border-2 border-dashed rounded-xl p-6 sm:p-8 text-center bg-gray-50 hover:bg-gray-100 transition cursor-pointer"
       whileHover={{ scale: 1.02 }}
     >
       <input
@@ -46,7 +46,7 @@ function FileUpload({ setFileName }) {
       />
       <label
         htmlFor="fileInput"
-        className="cursor-pointer text-indigo-600 font-medium"
+        className="cursor-pointer text-indigo-600 font-medium text-sm sm:text-base"
       >
         {uploading
           ? "📤 Uploading..."
