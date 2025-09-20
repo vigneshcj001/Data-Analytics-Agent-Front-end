@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import api from "./api";
+import api from "../api";
 
 function FileUpload({ setFileName }) {
   const [uploading, setUploading] = useState(false);

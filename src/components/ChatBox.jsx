@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import api from "./api";
+import api from "../api";
 
 function ChatBox({ fileName, apiKey }) {
   const [messages, setMessages] = useState([]);
